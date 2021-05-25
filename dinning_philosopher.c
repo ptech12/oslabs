@@ -5,7 +5,8 @@
 #include<errno.h>
 #include<sys/types.h>
 #include<sys/wait.h>
-one() 
+int tph, philname[20], status[20], howhung, hu[20], cho; 
+void one() 
     { 
     int pos=0, x, i; 
     printf("\nAllow one philosopher to eat at any time\n"); 
@@ -29,21 +30,21 @@ printf("\n Allow two philosophers to eat at same time\n");
                 t=hu[i]; 
                 r=hu[j]; 
                 s++; 
-                printf("\nP %d and P %d are granted to eat", philname[hu[i]],philname[hu[j]]); 
+                printf("\nP %d and P %d are granted to eat\n", philname[hu[i]],philname[hu[j]]); 
                 for(x=0;x<howhung;x++) 
                 { 
                     if((hu[x]!=t)&&(hu[x]!=r)) 
-                    printf("\nP %d is waiting", philname[hu[x]]); 
+                    printf("\nP %d is waiting\n", philname[hu[x]]); 
                 } 
             } 
         }   
     }
 }
-int tph, philname[20], status[20], howhung, hu[20], cho; 
+
 void main() 
 { 
     int i; 
-    printf("\n\nDINING PHILOSOPHER PROBLEM"); 
+    printf("\nDINING PHILOSOPHER PROBLEM"); 
     printf("\nEnter the total no. of philosophers: "); 
     scanf("%d",&tph); 
     for(i=0;i<tph;i++) 
@@ -67,7 +68,7 @@ void main()
         } 
         do 
         { 
-            printf("1.One can eat at a time\t2.Two can eat at a time\t3.Exit\nEnter your choice:"); 
+            printf("\n\n\t1.One can eat at a time\n\t2.Two can eat at a time\n\t3.Exit\nEnter your choice:"); 
             scanf("%d", &cho); 
             switch(cho) 
             { 
